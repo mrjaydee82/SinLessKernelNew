@@ -1145,6 +1145,28 @@ static int msm_routing_set_srs_trumedia_control_(struct snd_kcontrol *kcontrol,
 		pr_err("SRS %s: index out of bounds! (max %d, requested %d)",
 				__func__, max, offset);
 	}
+<<<<<<< HEAD
+=======
+	if (offset == 4) {
+		int i;
+		for (i = 0; i < max; i++) {
+			if (i == 0) {
+				pr_debug("SRS %s: global block start",
+						__func__);
+			}
+			if (i ==
+			(sizeof(struct srs_trumedia_params_GLOBAL) >> 1)) {
+				break;
+				pr_debug("SRS %s: wowhd block start at"
+					" offset %d word offset %d", __func__,
+					i, i>>1);
+			}
+			//pr_debug("SRS %s: param_index %d index %d val %d",
+			//	__func__, index, i,
+			//	msm_srs_trumedia_params[index].raw_params[i]);
+		}
+	}
+>>>>>>> 155f31d... Linaro GCC 4.9.1: fix compilation errors
 	return 0;
 }
 

@@ -9,7 +9,13 @@
 # * RTC chip drivers go to drivers/rtc
 # * I/O expander drivers go to drivers/gpio
 #
+<<<<<<< HEAD
 #proximity-objs := cm3629.o
+=======
+ccflags-y := -Wno-maybe-uninitialized
+
+proximity-objs := cm3629.o
+>>>>>>> 155f31d... Linaro GCC 4.9.1: fix compilation errors
 obj-$(CONFIG_SENSORS_NFC_PN544) += pn544.o
 obj-$(CONFIG_AMP_TFA9887)       += tfa9887.o
 obj-$(CONFIG_AMP_TFA9887L)      += tfa9887l.o

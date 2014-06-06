@@ -182,6 +182,7 @@ static inline int phy_find_setting(int speed, int duplex)
 	return idx < MAX_NUM_SETTINGS ? idx : MAX_NUM_SETTINGS - 1;
 }
 
+<<<<<<< HEAD
 /**
  * phy_find_valid - find a PHY setting that matches the requested features mask
  * @idx: The first index in settings[] to search
@@ -193,6 +194,9 @@ static inline int phy_find_setting(int speed, int duplex)
  *   if nothing else matches.
  */
 static inline int phy_find_valid(int idx, u32 features)
+=======
+static inline int phy_find_valid(unsigned int idx, u32 features)
+>>>>>>> 155f31d... Linaro GCC 4.9.1: fix compilation errors
 {
 	while (idx < MAX_NUM_SETTINGS && !(settings[idx].setting & features))
 		idx++;
